@@ -39,7 +39,7 @@ use App\Middlewares\FechaMiddleware;
 use Config\Database;
 use Illuminate\Container\Container;
 
-require __DIR__ . '/vendor/autoload.php';
+require './vendor/autoload.php';
 
 $container = new Container();
 AppFactory::setContainer($container);

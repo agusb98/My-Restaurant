@@ -1,0 +1,2056 @@
+{
+	"info": {
+		"_postman_id": "13a0aa0c-c886-41f0-bbf3-7060c7894b50",
+		"name": "Comanda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar",
+					"item": [
+						{
+							"name": "Todos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/user/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "POMPEYE_MARINO@GMAIL.COM",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/user/login/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agrega",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "gustavo",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "iturriaga",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "elitupaperro@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/user/sign/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"sign",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleados",
+			"item": [
+				{
+					"name": "Listar",
+					"item": [
+						{
+							"name": "Uno",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/empleado/41",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"empleado",
+										"41"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Todos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/empleado/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"empleado",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ingresos al sistema",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-02-07",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/empleado/logs",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"empleado",
+										"logs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cantidad de operaciones",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-22",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/empleado/cantidad/41",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"empleado",
+										"cantidad",
+										"41"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cantidad de operaciones por sector",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-22",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/puesto/cantidad/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"puesto",
+										"cantidad",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cantidad de operaciones por sector y empleado",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-22",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/puesto-empleado/cantidad/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"puesto-empleado",
+										"cantidad",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Estadisticas de empleados",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-22",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/empleado/estadistica/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"empleado",
+										"estadistica",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Promedio puntuacion mensual",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL}}/promedio-month/empleados/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"promedio-month",
+										"empleados",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agrega",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token_socio}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "elitupaperro@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "puesto",
+									"value": "cervecero",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/empleado/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"empleado",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifica",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token_socio}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "estado",
+									"value": "ACTIVO",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "INACTIVO",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/empleado/update/41",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"empleado",
+								"update",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borra",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token_socio}}"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/empleado/41",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"empleado",
+								"41"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Listar",
+					"item": [
+						{
+							"name": "Uno",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/cliente/6",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"cliente",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Todos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/cliente/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"cliente",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pedido",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_cliente_8}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/cliente/pedido/BM2Op",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"cliente",
+										"pedido",
+										"BM2Op"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agrega",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_mozo}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "pompeye_marino@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/cliente/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Listar",
+					"item": [
+						{
+							"name": "Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/producto/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"producto",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Uno",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/producto/12",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"producto",
+										"12"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mas populares",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/producto/popular/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"producto",
+										"popular",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Menos populares",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/producto/unpopular/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"producto",
+										"unpopular",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agrega",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_mozo}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{token_cocinero}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Ensalada mix",
+									"type": "text"
+								},
+								{
+									"key": "puesto",
+									"value": "COCINERO",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "180",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/producto/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"producto",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifica",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "precio",
+									"value": "190",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/producto/update/12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"producto",
+								"update",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borra",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/producto/12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"producto",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mesas",
+			"item": [
+				{
+					"name": "Listar",
+					"item": [
+						{
+							"name": "Uno",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{token_mozo}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/mesa/aaaak",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"aaaak"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Todos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{token_mozo}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/mesa/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mas populares",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/mesa/popular/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"popular",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Menos populares",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/mesa/unpopular/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"unpopular",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mayor facturamiento",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										},
+										{
+											"key": "fecha_final",
+											"value": "2020-12-29",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/mesa/import-most/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"import-most",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Menor facturamiento",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwicGVyc29uYV9pZCI6MSwiZW1haWwiOiJBR1VTU1pVUkRPQkBHTUFJTC5DT00iLCJwYXNzd29yZCI6IiQyeSQxMCRZQktMWDBqQ2FUbzNaTWVRTi5xdjV1cDdOU0tKenY2ZU9vSzh5RG9DSFpoOHBib1ZXUlFxaSIsImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTE1VDAzOjQ2OjAyLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0xNVQwMzo0NjowMi4wMDAwMDBaIn0.qyiK6r32R5yluj4CKGMlsDIifG89BH9Y4ux-J4qq_tA"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-22",
+											"type": "text"
+										},
+										{
+											"key": "fecha_final",
+											"value": "2020-12-29",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/mesa/import-less/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"import-less",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mayor importe",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-22",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/mesa/factura-most/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"factura-most",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Menor importe",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/mesa/factura-less/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"factura-less",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Facturacion acumulada",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/mesa/AAAAq",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mesa",
+										"AAAAq"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Promedio importes mensual por mesa",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL}}/promedio-month/mesas/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"promedio-month",
+										"mesas",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agrega",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "aaaak",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/mesa/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"mesa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/mesa/close/aaaax",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"mesa",
+								"close",
+								"aaaax"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/mesa/aaaak",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"mesa",
+								"aaaak"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Listar",
+					"item": [
+						{
+							"name": "Uno",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/pedido/tqs7M",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"pedido",
+										"tqs7M"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pendientes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_bartender}}",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "{{token_cervecero}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{token_cocinero}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL}}/pedido/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"pedido",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Demorados",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwicGVyc29uYV9pZCI6MSwiZW1haWwiOiJBR1VTU1pVUkRPQkBHTUFJTC5DT00iLCJwYXNzd29yZCI6IiQyeSQxMCRZQktMWDBqQ2FUbzNaTWVRTi5xdjV1cDdOU0tKenY2ZU9vSzh5RG9DSFpoOHBib1ZXUlFxaSIsImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTE1VDAzOjQ2OjAyLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0xNVQwMzo0NjowMi4wMDAwMDBaIn0.qyiK6r32R5yluj4CKGMlsDIifG89BH9Y4ux-J4qq_tA",
+										"description": "token socio",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-29",
+											"type": "text"
+										},
+										{
+											"key": "fecha_final",
+											"value": "2020-12-29",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/pedido/demored/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"pedido",
+										"demored",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancelados",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token_socio}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-10",
+											"type": "text"
+										},
+										{
+											"key": "fecha_final",
+											"value": "2020-12-29",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/pedido/canceled",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"pedido",
+										"canceled"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Promedio de importes mensual",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL}}/promedio-month/importes/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"promedio-month",
+										"importes",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agrega pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_mozo}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mesa_codigo",
+									"value": "AAAAa",
+									"type": "text"
+								},
+								{
+									"key": "cliente_id",
+									"value": "14",
+									"type": "text"
+								},
+								{
+									"key": "productos_id",
+									"value": "10, 4",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/AgusB/Pictures/Wallpaper/Ozarks.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/pedido/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prepara pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_bartender}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_cervecero}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{token_cocinero}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tiempo",
+									"value": "00:13:00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tiempo",
+									"value": "00:02:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/pedido/preparar/tqs7M-112",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								"preparar",
+								"tqs7M-112"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listo pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_bartender}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_cervecero}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "{{token_cocinero}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}/pedido/listo/tqs7M",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								"listo",
+								"tqs7M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sirve pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_mozo}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}/pedido/servir/tqs7M",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								"servir",
+								"tqs7M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cobra pedido: factura en Excel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_mozo}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}/pedido/cobrar-excel/tqs7M",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								"cobrar-excel",
+								"tqs7M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cobra pedido: factura en PDF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_mozo}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}/pedido/cobrar-pdf/tqs7M",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								"cobrar-pdf",
+								"tqs7M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancela pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}/pedido/cancelar/tqs7M",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								"cancelar",
+								"tqs7M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borra pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_socio}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/pedido/tqs7M",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido",
+								"tqs7M"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Encuestas",
+			"item": [
+				{
+					"name": "Listar",
+					"item": [
+						{
+							"name": "Uno",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/encuesta/BM2Op",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"encuesta",
+										"BM2Op"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Todos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/encuesta/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"encuesta",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comentarios positivos",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-23",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/encuesta/best/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"encuesta",
+										"best",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comentarios negativos",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token_socio}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fecha_inicial",
+											"value": "2020-12-22",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/encuesta/worst",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"encuesta",
+										"worst"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agrega",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token_cliente_8}}",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token_cliente_7}}",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token_cliente_6}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pedido_codigo",
+									"value": "tqs7M",
+									"type": "text"
+								},
+								{
+									"key": "mesa",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "restaurante",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "mozo",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "cocinero",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "solo me gusto el morfi, la atencion fue pesima",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/encuesta/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"encuesta",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost/05-TPs/Comanda"
+		},
+		{
+			"key": "token_socio",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwicGVyc29uYV9pZCI6MSwiZW1haWwiOiJBR1VTU1pVUkRPQkBHTUFJTC5DT00iLCJwYXNzd29yZCI6IiQyeSQxMCRZQktMWDBqQ2FUbzNaTWVRTi5xdjV1cDdOU0tKenY2ZU9vSzh5RG9DSFpoOHBib1ZXUlFxaSIsImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTE1VDAzOjQ2OjAyLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0xNVQwMzo0NjowMi4wMDAwMDBaIn0.qyiK6r32R5yluj4CKGMlsDIifG89BH9Y4ux-J4qq_tA"
+		},
+		{
+			"key": "token_cliente_6",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OSwicGVyc29uYV9pZCI6OSwiZW1haWwiOiJNQVJDT1NMT0NPMjAyMEBHTUFJTC5DT00iLCJwYXNzd29yZCI6IiQyeSQxMCRZczZPcWJkcDlwVWpOVkRhczg0VlNlaTJ3WDBGZ3AzMVZiWWZwYTVRRkVWYzdPYk9YZjBnUyIsImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTIxVDE4OjA1OjUwLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0yMVQxODowNTo1MC4wMDAwMDBaIn0.wz_WlxWWd6bIyWQyb9bikJzjbbQ9V3QbYQWJMTsKmqA"
+		},
+		{
+			"key": "token_cliente_7",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NywicGVyc29uYV9pZCI6NywiZW1haWwiOiJob2xhcXVldGFsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJ5JDEwJEpxckdHWGVMbjVBRWwySmZMXC9EVXRPZDdtQVkucHZaWDgwMVlGUUtMaXd1WFNnV1IzbkU0SyIsImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTE1VDIzOjEzOjUxLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0xNVQyMzoxMzo1MS4wMDAwMDBaIn0.cIzPsYOD3iZICNMqxqXJUNcTSRmlb-1jocx03dBNmsQ"
+		},
+		{
+			"key": "token_cliente_8",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicGVyc29uYV9pZCI6OCwiZW1haWwiOiJKVUFOQ0lUT0xBUkdPQEdNQUlMLkNPTSIsInBhc3N3b3JkIjoiJDJ5JDEwJFROZlFSTnhNS1dVY2NET2lnY21KRk9oYWJ5N2xJUElxNzI1ZE1wZFY1YzZtdEprVmIyeVMyIiwiY3JlYXRlZF9hdCI6IjIwMjAtMTItMTVUMjM6MjY6NTUuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIwLTEyLTE1VDIzOjI2OjU1LjAwMDAwMFoifQ.8hdaZvDRplP_cml7F-Tdsg3J0OkcfgIJd7u7PfZeQ3M"
+		},
+		{
+			"key": "token_bartender",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjEsInBlcnNvbmFfaWQiOjIxLCJlbWFpbCI6Ik1BR1VFRUVAR01BSUwuQ09NIiwicGFzc3dvcmQiOiIkMnkkMTAkZmNOQVNoY2pKNVVHbnlZVnB3V0xHT29Rd1hVTnMyTEtXWHhSMkZOcEhuQ05aSFk4Y0JPVm0iLCJjcmVhdGVkX2F0IjoiMjAyMS0wMS0yMVQxNTozMTowMy4wMDAwMDBaIiwidXBkYXRlZF9hdCI6IjIwMjEtMDEtMjFUMTU6MzE6MDMuMDAwMDAwWiJ9.yGe87ud1qA7Bxs-Kv2iHN53TsyEK04uwKrHUwZErhhU"
+		},
+		{
+			"key": "token_cervecero",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTIsInBlcnNvbmFfaWQiOjEyLCJlbWFpbCI6IkxFT05BUkRPRElDQVBSSU9AQ09TTy5DT00iLCJwYXNzd29yZCI6IiQyeSQxMCRcL2FObTNTNzV5TnNJV2w2aXRWWGQ3dUVPcVhpZjhJeEd4VTl6dElTSk05Tzl2VUNpcmlOXC9TIiwiY3JlYXRlZF9hdCI6IjIwMjEtMDEtMDhUMjA6Mzc6MDQuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIxLTAxLTA4VDIwOjM3OjA0LjAwMDAwMFoifQ.z16daAzFVyhTwTKKKa_04DhLC0FvGubGx8D_dsTF5zQ"
+		},
+		{
+			"key": "token_cocinero",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwicGVyc29uYV9pZCI6MiwiZW1haWwiOiJMRU9QT0xET1NBQkVAR01BSUwuQ09NIiwicGFzc3dvcmQiOiIkMnkkMTAkTHI0VEc1ckdybkFRcXE5Zmpic3d4dVRNZHB4VGhVTmRTWDc0TERReHdSQ0QxcjRIWGw4elciLCJjcmVhdGVkX2F0IjoiMjAyMC0xMi0xNVQwMzo0Njo1Mi4wMDAwMDBaIiwidXBkYXRlZF9hdCI6IjIwMjAtMTItMTVUMDM6NDY6NTIuMDAwMDAwWiJ9.j6NKZoUYLArxZXGPqonB8Rd-Cfs19U8IHvf31puN7_o"
+		},
+		{
+			"key": "token_mozo",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywicGVyc29uYV9pZCI6MywiZW1haWwiOiJUSU5DSE9MQVJBQEdNQUlMLkNPTSIsInBhc3N3b3JkIjoiJDJ5JDEwJGM2N1MxM1Ixb2pnY0FHTTdPeFZrMnV3UGg5clg3ZTMxM3hyZWd1d0JNYnhaZlVlXC9lZmtsaSIsImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTE1VDAzOjQ3OjA4LjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0xNVQwMzo0NzowOC4wMDAwMDBaIn0.ace9eXUpUfTRAXl9FctMW0WHoYlwXr8XwN4BOV2UjLE"
+		}
+	]
+}

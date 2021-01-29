@@ -11,7 +11,12 @@ class UserController{
     }
 
     public function getAll(){
-        return User::get();
+        return User::select('users.id', 'personas.id as persona_id', 
+                            'personas.nombre', 'personas.apellido',
+                            'users.email', 'users.password',
+                            'users.created_at', 'users.updated_at')
+                        ->join('personas', 'personas.id', '=', 'users.persona_id')
+                        ->get();
     }
 
     public function add($email, $password, $nombre, $apellido){

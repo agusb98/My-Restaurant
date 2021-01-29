@@ -329,7 +329,7 @@ class Controller{
         $codigo_pedido = $args['code'] ?? '';
 
         if($pedido = PedidoController::getOne($codigo_pedido)){
-            $rta = array("status" => "OK", "message" => "Dato Pedido", "pedido" => $pedido);
+            $rta = array("status" => "OK", "message" => "Datos Pedido", "pedido" => $pedido);
         }
         else{ $rta = array("status" => "ERROR", "message" => "Pedido no existente"); }
         
@@ -425,6 +425,7 @@ class Controller{
         if(PedidoController::getOne($pedido_codigo)){
             PedidoController::Update($pedido_codigo, 4);
             FacturaController::getPDF($pedido_codigo);
+            MesaController::Update($pedido->mesa, 4);
             $rta = array("status" => "OK", "message" => "Pedido cobrado");
         }
         else { $rta = array("status" => "ERROR", "message" => 'Pedido Inexistente'); }

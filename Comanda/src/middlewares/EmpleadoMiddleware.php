@@ -14,7 +14,7 @@ class EmpleadoMiddleware{
         
         if ($payload = iToken::checkToken()) {
             $empleado = Empleado::where("persona_id", "=", $payload->id)->First();
-            if ($empleado->puesto_id != null && $empleado->estado_id == 1) {
+            if ($empleado && $empleado->estado_id == 1) {
                 $ingreso = new Ingreso_empleado;
                 $ingreso->empleado_id = $empleado->id;
                 $ingreso->ingreso = Date::get_now();
